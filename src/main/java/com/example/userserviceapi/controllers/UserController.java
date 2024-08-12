@@ -1,4 +1,4 @@
-package com.example.userservicemorningbatch.controllers;
+package com.example.userserviceapi.controllers;
 
 import com.example.userserviceapi.dtos.*;
 import com.example.userserviceapi.exceptions.InvalidPasswordException;
