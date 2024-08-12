@@ -1,29 +1,29 @@
 package com.example.userserviceapi.dtos;
 
 import com.example.userserviceapi.models.Role;
+import com.example.userserviceapi.models.User;
 import jakarta.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.catalina.User;
 
 import java.util.List;
 
 @Getter
 @Setter
 public class UserDto {
-    private String username;
+    private String name;
     private String email;
     @ManyToMany
     private List<Role> roles;
-    private boolean isEmailVerified;
+    private boolean isEmailVerified;;
 
-    public  static UserDto toDto(User user) {
+    public static UserDto from(User user) {
         UserDto userDto = new UserDto();
-        userDto.setUsername(user.getUsername());
-        userDto.setEmailVerified(user.getRoles());
+        userDto.setEmail(user.getEmail());
+        userDto.setName(user.getName());
+        userDto.setEmailVerified(user.isEmailVerified());
+        userDto.setRoles(user.getRoles());
+
         return userDto;
-
     }
-
-
 }

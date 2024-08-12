@@ -13,6 +13,6 @@ import lombok.Setter;
 public class BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private boolean isDeleted;
+    private Long id;
+    private boolean deleted;
 }
